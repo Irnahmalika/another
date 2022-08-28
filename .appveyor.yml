@@ -20,6 +20,8 @@ init:
   - echo Some common logic here...
 
 for:
+
+  -
     matrix:
       only:
         - job_name: Test1
