@@ -36,18 +36,7 @@ environment:
   matrix:
 
   - job_name: Test1
-  [- job_group: Test1]
-  [- jobs_per_group: N]
-  [- job_depends_on: Test1]
-  [- job_allow_cancellation: true]
-
   - job_name: Test2
-  [- job_group: Test2]
-  [- jobs_per_group: N]
-  [- job_depends_on: Test2]
-  [- job_allow_cancellation: true]
-
-  ...
 
 # the first failed job cancels other jobs and fails entire build
 matrix:
@@ -76,5 +65,3 @@ for:
 
     build_script:
     - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
-
-  ...
